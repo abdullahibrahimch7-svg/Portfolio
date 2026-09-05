@@ -1,0 +1,3032 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Abdullah Ibrahim | Portfolio</title>
+
+    <!-- CSS -->
+    <style id="portfolio-styles">
+/* ==========================================
+   GOOGLE FONTS
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#08111F;
+
+    color:white;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+    position:relative;
+
+}
+
+
+
+/* ==========================================
+   VARIABLES
+========================================== */
+
+:root{
+
+
+--primary:#00C8FF;
+--secondary:#00EEFF;
+
+--bg:#08111F;
+--bg2:#0D1627;
+
+--text:#ffffff;
+--soft:#BFC7D5;
+
+
+--glass:
+rgba(255,255,255,.05);
+
+
+--border:
+rgba(255,255,255,.08);
+
+
+--shadow:
+
+0 0 10px rgba(0,200,255,.2),
+
+0 0 25px rgba(0,200,255,.15),
+
+0 0 50px rgba(0,200,255,.1);
+
+
+}
+
+
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#08111F;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#00C8FF,
+
+#00EEFF
+
+);
+
+
+border-radius:20px;
+
+
+}
+
+
+
+
+/* ==========================================
+   BODY GLOW
+========================================== */
+
+
+body::before{
+
+
+content:"";
+
+
+position:fixed;
+
+
+left:0;
+top:0;
+
+
+width:100%;
+height:100%;
+
+
+background:
+
+
+radial-gradient(
+
+circle at top left,
+
+rgba(0,255,255,.08),
+
+transparent 40%
+
+),
+
+
+radial-gradient(
+
+circle at bottom right,
+
+rgba(0,180,255,.08),
+
+transparent 40%
+
+);
+
+
+z-index:-5;
+
+
+}
+
+
+
+/*=========================================
+        PREMIUM PRELOADER
+=========================================*/
+
+#preloader{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:linear-gradient(
+135deg,
+#071321,
+#0B1F33,
+#071321
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:999999;
+
+overflow:hidden;
+
+transition:opacity .8s ease,
+visibility .8s ease;
+
+}
+
+.loader-container{
+
+text-align:center;
+
+position:relative;
+
+}
+
+.logo-loader{
+
+width:160px;
+height:160px;
+
+margin:auto;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:70px;
+font-weight:900;
+
+font-family:'Orbitron',sans-serif;
+
+color:#00eaff;
+
+background:rgba(255,255,255,.03);
+
+border:2px solid rgba(0,234,255,.35);
+
+box-shadow:
+
+0 0 20px #00eaff,
+0 0 60px rgba(0,234,255,.4);
+
+position:relative;
+
+z-index:10;
+
+}
+
+.loader-ring{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+width:180px;
+height:180px;
+
+border-radius:50%;
+
+border:2px solid transparent;
+
+border-top:2px solid #00eaff;
+
+transform:translate(-50%,-50%);
+
+animation:spin 2s linear infinite;
+
+}
+
+.ring2{
+
+width:220px;
+height:220px;
+
+animation-direction:reverse;
+
+animation-duration:3s;
+
+opacity:.6;
+
+}
+
+.ring3{
+
+width:260px;
+height:260px;
+
+animation-duration:5s;
+
+opacity:.35;
+
+}
+
+.loader-container h2{
+
+margin-top:50px;
+
+font-size:32px;
+
+font-family:'Orbitron';
+
+letter-spacing:2px;
+
+}
+
+.loader-container p{
+
+margin-top:10px;
+
+color:#7fdfff;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+}
+
+.loading-bar{
+
+margin:40px auto 20px;
+
+width:350px;
+
+height:8px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:50px;
+
+overflow:hidden;
+
+}
+
+.loading-progress{
+
+width:0%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+#00c8ff,
+#00ffff
+);
+
+border-radius:50px;
+
+animation:loading 2.6s ease forwards;
+
+box-shadow:0 0 20px cyan;
+
+}
+
+.loading-text{
+
+font-size:14px;
+
+letter-spacing:2px;
+
+color:#9bdfff;
+
+}
+
+@keyframes loading{
+
+0%{
+
+width:0%;
+
+}
+
+100%{
+
+width:100%;
+
+}
+
+}
+
+
+
+
+
+/* ==========================================
+   CURSOR
+========================================== */
+
+
+.cursor{
+
+
+position:fixed;
+
+width:15px;
+height:15px;
+
+
+background:cyan;
+
+
+border-radius:50%;
+
+
+pointer-events:none;
+
+
+z-index:9999;
+
+
+transform:translate(-50%,-50%);
+
+
+}
+
+
+
+
+.cursor2{
+
+
+position:fixed;
+
+
+width:40px;
+height:40px;
+
+
+border:1px solid cyan;
+
+
+border-radius:50%;
+
+
+pointer-events:none;
+
+
+z-index:9998;
+
+
+transform:translate(-50%,-50%);
+
+
+transition:.15s;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   GLASS EFFECT
+========================================== */
+
+.glass{
+
+
+background:
+
+
+rgba(255,255,255,.04);
+
+
+
+backdrop-filter:
+
+
+blur(15px);
+
+
+
+-webkit-backdrop-filter:
+
+
+blur(15px);
+
+
+
+border:
+
+
+1px solid rgba(255,255,255,.08);
+
+
+
+box-shadow:
+
+
+var(--shadow);
+
+
+
+border-radius:
+
+
+25px;
+
+
+}
+
+
+
+
+
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+
+.navbar{
+
+
+position:fixed;
+
+
+top:0;
+
+
+width:100%;
+
+
+padding:25px 8%;
+
+
+display:flex;
+
+
+justify-content:space-between;
+
+
+align-items:center;
+
+
+
+background:
+
+
+rgba(0,0,0,.25);
+
+
+
+backdrop-filter:
+
+
+blur(20px);
+
+
+
+-webkit-backdrop-filter:
+
+
+blur(20px);
+
+
+
+border-bottom:
+
+
+1px solid rgba(255,255,255,.05);
+
+
+
+z-index:1000;
+
+
+}
+
+
+
+
+
+.logo{
+
+
+font-size:28px;
+
+
+font-family:'Orbitron';
+
+
+font-weight:800;
+
+
+color:cyan;
+
+
+text-shadow:
+
+
+0 0 20px cyan;
+
+
+}
+
+
+
+
+
+.navbar ul{
+
+
+display:flex;
+
+
+list-style:none;
+
+
+gap:40px;
+
+
+}
+
+
+
+
+.navbar a{
+
+
+text-decoration:none;
+
+
+color:white;
+
+
+font-weight:500;
+
+
+position:relative;
+
+
+transition:.4s;
+
+
+}
+
+
+
+
+.navbar a:hover{
+
+
+color:cyan;
+
+
+}
+
+
+
+.navbar a::after{
+
+
+content:"";
+
+
+position:absolute;
+
+
+left:0;
+
+bottom:-5px;
+
+
+width:0;
+
+
+height:2px;
+
+
+background:cyan;
+
+
+transition:.4s;
+
+
+}
+
+
+
+
+.navbar a:hover::after{
+
+
+width:100%;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+
+.hero{
+
+
+height:100vh;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+text-align:center;
+
+
+position:relative;
+
+
+overflow:hidden;
+
+
+}
+
+
+
+
+.hero-content{
+
+
+padding:60px;
+
+
+max-width:900px;
+
+
+z-index:10;
+
+
+}
+
+
+
+
+.hero h1{
+
+
+font-size:5rem;
+
+
+font-family:'Orbitron';
+
+
+font-weight:900;
+
+
+margin-bottom:20px;
+
+
+
+background:
+
+
+linear-gradient(
+
+90deg,
+
+white,
+
+cyan
+
+);
+
+
+background-clip:text;
+
+-webkit-background-clip:text;
+
+
+color:transparent;
+
+-webkit-text-fill-color:transparent;
+
+
+}
+
+
+
+
+
+.hero h2{
+
+
+font-size:2rem;
+
+
+color:#8EEEFF;
+
+
+margin-bottom:20px;
+
+
+}
+
+
+
+
+.hero p{
+
+
+font-size:1.1rem;
+
+
+line-height:2;
+
+
+color:#BFC7D5;
+
+
+margin-bottom:40px;
+
+
+}
+
+
+
+
+.btn{
+
+
+padding:16px 40px;
+
+
+border-radius:50px;
+
+
+text-decoration:none;
+
+
+font-weight:700;
+
+
+background:
+
+
+linear-gradient(
+
+135deg,
+
+#00C8FF,
+
+#00EEFF
+
+);
+
+
+color:black;
+
+
+display:inline-block;
+
+
+transition:.4s;
+
+
+}
+
+
+
+
+.btn:hover{
+
+
+transform:translateY(-5px);
+
+
+box-shadow:
+
+
+0 0 25px cyan;
+
+
+}
+/*=========================================
+            SECTION TITLES
+=========================================*/
+
+.section-title{
+
+    font-size:3rem;
+
+    font-family:'Orbitron',sans-serif;
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+    color:var(--primary);
+
+    text-shadow:
+
+        0 0 15px var(--primary),
+
+        0 0 30px rgba(0,200,255,.35);
+
+}
+
+
+
+
+
+/*=========================================
+                ABOUT
+=========================================*/
+
+#about{
+
+    padding:120px 8%;
+
+}
+
+
+.about-card{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:50px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.5s ease;
+
+}
+
+
+.about-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+.about-card h3{
+
+    font-size:2rem;
+
+    font-family:'Orbitron';
+
+    color:var(--primary);
+
+    margin-bottom:30px;
+
+}
+
+
+.about-card p{
+
+    color:var(--soft);
+
+    line-height:2;
+
+    margin-bottom:18px;
+
+    font-size:1.05rem;
+
+}
+
+
+
+
+
+
+/*=========================================
+            EXPERIENCE
+=========================================*/
+
+
+#experience{
+
+    padding:120px 8%;
+
+}
+
+
+
+.skills{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+
+
+.skill{
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.5s;
+
+    position:relative;
+
+}
+
+
+.skill:hover{
+
+    transform:
+
+        translateY(-12px);
+
+}
+
+
+
+.skill i{
+
+    font-size:60px;
+
+    color:var(--primary);
+
+    margin-bottom:25px;
+
+}
+
+
+
+.skill h3{
+
+    font-size:1.5rem;
+
+    margin-bottom:20px;
+
+    font-family:'Orbitron';
+
+}
+
+
+.skill p{
+
+    line-height:1.8;
+
+    color:var(--soft);
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+/*=========================================
+            PROGRESS BAR
+=========================================*/
+
+
+.progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:#111827;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+
+
+.progress-bar{
+
+    height:100%;
+
+    border-radius:30px;
+
+    position:relative;
+
+}
+
+
+
+.progress-bar span{
+
+    position:absolute;
+
+    right:10px;
+
+    top:-28px;
+
+    font-size:14px;
+
+    color:white;
+
+}
+
+
+
+
+
+.python{
+
+    width:95%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #00C8FF,
+
+            #00EEFF
+
+        );
+
+}
+
+
+.html{
+
+    width:90%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #00C8FF,
+
+            #00EEFF
+
+        );
+
+}
+
+
+.css{
+
+    width:88%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #00C8FF,
+
+            #00EEFF
+
+        );
+
+}
+
+
+
+.javascript{
+
+    width:75%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #00C8FF,
+
+            #00EEFF
+
+        );
+
+}
+
+
+
+.git{
+
+    width:70%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #00C8FF,
+
+            #00EEFF
+
+        );
+
+}
+
+
+
+.github{
+
+    width:80%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #00C8FF,
+
+            #00EEFF
+
+        );
+
+}
+
+
+
+
+
+/*=========================================
+            FLOAT EFFECT
+=========================================*/
+
+
+.skill{
+
+    animation:
+
+        floating 6s ease-in-out infinite;
+
+}
+
+
+.skill:nth-child(2){
+
+    animation-delay:1s;
+
+}
+
+.skill:nth-child(3){
+
+    animation-delay:2s;
+
+}
+
+.skill:nth-child(4){
+
+    animation-delay:3s;
+
+}
+
+.skill:nth-child(5){
+
+    animation-delay:4s;
+
+}
+
+.skill:nth-child(6){
+
+    animation-delay:5s;
+
+}
+
+
+
+@keyframes floating{
+
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+
+}
+
+
+
+
+
+/*=========================================
+        SKILL CARD GLOW
+=========================================*/
+
+
+.skill:hover{
+
+
+box-shadow:
+
+
+0 0 20px rgba(0,200,255,.3),
+
+0 0 40px rgba(0,200,255,.2),
+
+0 0 60px rgba(0,200,255,.1);
+
+
+}
+/* ==========================================
+                PROJECTS
+========================================== */
+
+#projects{
+
+    padding:120px 8%;
+
+}
+
+
+.project-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:35px;
+
+}
+
+
+.project{
+
+    padding:35px;
+
+    min-height:300px;
+
+    cursor:pointer;
+
+    transition:.4s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.project:hover{
+
+    transform:
+
+        translateY(-12px)
+
+        rotateX(3deg)
+
+        rotateY(-3deg);
+
+
+    box-shadow:
+
+        0 0 20px rgba(0,200,255,.3),
+
+        0 0 50px rgba(0,200,255,.2);
+
+}
+
+
+.project-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:25px;
+
+
+    background:
+
+        rgba(255,255,255,.04);
+
+}
+
+
+.project-icon i{
+
+    font-size:30px;
+
+    color:var(--primary);
+
+}
+
+
+.project h2{
+
+    font-size:1.4rem;
+
+    font-family:'Orbitron';
+
+    margin-bottom:20px;
+
+}
+
+
+.project p{
+
+    color:var(--soft);
+
+    line-height:1.8;
+
+}
+
+
+.project-footer{
+
+    margin-top:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.project-footer span{
+
+    color:var(--primary);
+
+}
+
+
+.project-footer i{
+
+    color:var(--primary);
+
+}
+
+
+
+
+
+/* ==========================================
+                CONTACT
+========================================== */
+
+#contact{
+
+    padding:120px 8%;
+
+}
+
+
+.contact{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.contact a{
+
+    text-decoration:none;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:20px 25px;
+
+    border-radius:15px;
+
+    transition:.4s;
+
+}
+
+
+.contact a:hover{
+
+    color:cyan;
+
+    transform:translateY(-5px);
+
+}
+
+
+.contact i{
+
+    font-size:28px;
+
+    color:var(--primary);
+
+}
+
+
+
+
+
+/* ==========================================
+                FOOTER
+========================================== */
+
+
+footer{
+
+
+padding:40px;
+
+text-align:center;
+
+margin-top:80px;
+
+border-top:
+
+1px solid rgba(255,255,255,.08);
+
+
+color:var(--soft);
+
+
+}
+
+
+footer p{
+
+margin-bottom:10px;
+
+}
+
+
+
+
+
+/* ==========================================
+            SCROLL INDICATOR
+========================================== */
+
+
+.scroll-indicator{
+
+
+position:absolute;
+
+bottom:40px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+
+}
+
+
+.scroll-indicator span{
+
+
+display:block;
+
+width:25px;
+
+height:45px;
+
+
+border:
+
+2px solid cyan;
+
+
+border-radius:20px;
+
+
+position:relative;
+
+
+}
+
+
+
+.scroll-indicator span::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+left:50%;
+
+top:8px;
+
+
+width:6px;
+
+height:6px;
+
+
+background:cyan;
+
+
+border-radius:50%;
+
+
+transform:translateX(-50%);
+
+
+animation:
+
+scroll 2s infinite;
+
+
+}
+
+
+
+@keyframes scroll{
+
+
+0%{
+
+opacity:0;
+
+top:8px;
+
+}
+
+
+50%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+opacity:0;
+
+top:28px;
+
+}
+
+
+}
+
+
+
+
+
+/* ==========================================
+                AURORA
+========================================== */
+
+
+.aurora{
+
+
+position:fixed;
+
+
+width:700px;
+
+height:700px;
+
+
+top:-200px;
+
+left:-200px;
+
+
+background:
+
+
+linear-gradient(
+
+135deg,
+
+rgba(0,255,255,.2),
+
+rgba(0,100,255,.15)
+
+);
+
+
+filter:blur(140px);
+
+
+animation:
+
+auroraMove 10s infinite alternate;
+
+
+z-index:-2;
+
+
+}
+
+
+
+
+@keyframes auroraMove{
+
+
+0%{
+
+
+transform:
+
+translate(0,0);
+
+
+}
+
+
+
+100%{
+
+
+transform:
+
+translate(250px,150px);
+
+
+}
+
+
+}
+
+
+
+
+
+/* ==========================================
+            PARTICLES
+========================================== */
+
+#particles{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:-3;
+
+}
+
+
+
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+
+@media(max-width:1200px){
+
+.project-grid{
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+}
+
+}
+
+
+
+
+@media(max-width:768px){
+
+.navbar{
+
+padding:20px;
+
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+
+.navbar ul{
+
+gap:20px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+
+
+.hero h1{
+
+font-size:3rem;
+
+}
+
+
+
+.hero h2{
+
+font-size:1.4rem;
+
+}
+
+
+
+.section-title{
+
+font-size:2.3rem;
+
+}
+
+
+
+.project-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.contact{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+
+
+.about-card{
+
+padding:30px;
+
+}
+
+
+
+.skill{
+
+padding:30px;
+
+}
+
+
+}
+
+
+
+
+
+/* ==========================================
+        PREMIUM FINAL EFFECTS
+========================================== */
+
+
+::selection{
+
+
+background:cyan;
+
+
+color:black;
+
+
+}
+
+
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+
+
+*{
+
+transition:
+
+background .4s,
+
+transform .4s,
+
+box-shadow .4s,
+
+color .4s;
+
+}
+
+/* ==========================================
+   UNIVERSAL RESPONSIVE LAYOUT
+   Desktop design stays unchanged; mobile/tablet
+   rules below adapt the same design to the viewport.
+========================================== */
+
+.menu-toggle{
+    display:none;
+    width:46px;
+    height:46px;
+    border:1px solid rgba(0,234,255,.25);
+    border-radius:12px;
+    background:rgba(255,255,255,.04);
+    box-shadow:0 0 15px rgba(0,200,255,.12);
+    cursor:pointer;
+    padding:10px;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+}
+.menu-toggle span{
+    display:block;
+    width:22px;
+    height:2px;
+    border-radius:5px;
+    background:#00eaff;
+    box-shadow:0 0 8px rgba(0,234,255,.7);
+    transition:transform .3s ease, opacity .3s ease;
+}
+.menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-toggle.active span:nth-child(2){opacity:0;}
+.menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+@media (max-width: 900px){
+    .navbar{
+        padding:16px clamp(16px,4vw,30px);
+    }
+    .navbar ul{
+        gap:clamp(12px,2.5vw,24px);
+    }
+}
+
+@media (max-width: 768px){
+    body{
+        overflow-x:hidden;
+    }
+    .navbar{
+        width:calc(100% - 24px);
+        margin:12px;
+        padding:14px 16px;
+        min-height:64px;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        gap:12px;
+    }
+    .navbar .logo{
+        font-size:clamp(14px,4.5vw,20px);
+        white-space:nowrap;
+    }
+    .menu-toggle{
+        display:flex;
+        flex-shrink:0;
+    }
+    .navbar ul{
+        position:absolute;
+        top:calc(100% + 8px);
+        left:0;
+        right:0;
+        width:100%;
+        margin:0;
+        padding:10px;
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:4px;
+        background:rgba(8,17,31,.96);
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:16px;
+        box-shadow:0 15px 45px rgba(0,0,0,.45),0 0 25px rgba(0,200,255,.10);
+        backdrop-filter:blur(18px);
+        -webkit-backdrop-filter:blur(18px);
+        opacity:0;
+        visibility:hidden;
+        pointer-events:none;
+        transform:translateY(-10px);
+        transition:opacity .3s ease, transform .3s ease, visibility .3s ease;
+        z-index:1000;
+    }
+    .navbar.mobile-open ul{
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+        transform:translateY(0);
+    }
+    .navbar ul li{
+        width:100%;
+    }
+    .navbar ul li a{
+        display:block;
+        width:100%;
+        padding:12px 14px;
+        border-radius:10px;
+        text-align:center;
+    }
+    .navbar ul li a:hover,
+    .navbar ul li a.active{
+        background:rgba(0,200,255,.08);
+    }
+    .hero{
+        min-height:100svh;
+        padding:90px 16px 50px;
+    }
+    .hero-content{
+        width:min(100%, 680px);
+        padding:clamp(24px,7vw,48px);
+    }
+    .hero h1{
+        font-size:clamp(2rem,9vw,3.2rem);
+        line-height:1.15;
+    }
+    .hero h2{
+        font-size:clamp(1.05rem,4.5vw,1.4rem);
+    }
+    .hero p{
+        font-size:clamp(.82rem,3.5vw,1rem);
+        line-height:1.7;
+    }
+    .btn{
+        max-width:100%;
+    }
+    section{
+        padding-left:16px;
+        padding-right:16px;
+    }
+    .section-title{
+        font-size:clamp(1.8rem,8vw,2.5rem);
+        line-height:1.2;
+    }
+    .about-card, .skill, .project, .contact{
+        width:100%;
+    }
+    .about-card{
+        padding:clamp(20px,6vw,30px);
+    }
+    .skill{
+        padding:clamp(20px,6vw,30px);
+    }
+    .project-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+    .contact{
+        flex-direction:column;
+        align-items:stretch;
+    }
+    .loading-bar{
+        width:min(350px,80vw);
+    }
+    .loader-container h2{
+        font-size:clamp(20px,6vw,32px);
+    }
+    .logo-loader{
+        width:clamp(110px,32vw,160px);
+        height:clamp(110px,32vw,160px);
+        font-size:clamp(48px,15vw,70px);
+    }
+    .loader-ring{width:clamp(130px,38vw,180px);height:clamp(130px,38vw,180px);}
+    .ring2{width:clamp(165px,48vw,220px);height:clamp(165px,48vw,220px);}
+    .ring3{width:clamp(200px,58vw,260px);height:clamp(200px,58vw,260px);}
+}
+
+@media (max-width: 480px){
+    .navbar{
+        width:calc(100% - 16px);
+        margin:8px;
+        padding:12px;
+    }
+    .hero{
+        padding-left:12px;
+        padding-right:12px;
+    }
+    section{
+        padding-left:12px;
+        padding-right:12px;
+    }
+    .about-card, .skill, .project{
+        border-radius:16px;
+    }
+}
+
+@media (hover:none), (pointer:coarse){
+    .cursor, .cursor2{
+        display:none !important;
+    }
+    .project{
+        transform:none !important;
+    }
+}
+
+@media (prefers-reduced-motion:reduce){
+    *, *::before, *::after{
+        scroll-behavior:auto !important;
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+}
+
+</style>
+
+
+    <!-- Orbitron -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Fontawesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+
+</head>
+
+<body>
+
+
+
+<!-- ====================================== -->
+<!-- PRELOADER -->
+<!-- ====================================== -->
+
+
+<!-- ==========================================
+                PREMIUM PRELOADER
+========================================== -->
+
+<div id="preloader">
+
+    <div class="loader-container">
+
+        <div class="loader-ring"></div>
+
+        <div class="loader-ring ring2"></div>
+
+        <div class="loader-ring ring3"></div>
+
+        <div class="logo-loader">
+
+            AI
+
+        </div>
+
+        <h2>
+
+            Abdullah Ibrahim
+
+        </h2>
+
+        <p>
+
+            Python Developer
+
+        </p>
+
+        <div class="loading-bar">
+
+            <div class="loading-progress"></div>
+
+        </div>
+
+        <span class="loading-text">
+
+            Initializing Portfolio...
+
+        </span>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- ====================================== -->
+<!-- CUSTOM CURSOR -->
+<!-- ====================================== -->
+
+
+<div class="cursor"></div>
+<div class="cursor2"></div>
+
+
+
+
+<!-- ====================================== -->
+<!-- PARTICLES -->
+<!-- ====================================== -->
+
+
+<div id="particles"></div>
+
+
+
+
+
+<!-- ====================================== -->
+<!-- AURORA -->
+<!-- ====================================== -->
+
+
+<div class="aurora"></div>
+
+
+
+
+
+
+<!-- ====================================== -->
+<!-- NAVBAR -->
+<!-- ====================================== -->
+
+
+<nav class="navbar">
+
+
+
+    <div class="logo">
+
+        Abdullah Ibrahim
+
+    </div>
+
+
+
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+    <ul>
+
+
+        <li>
+
+            <a href="#hero">
+
+                Home
+
+            </a>
+
+        </li>
+
+
+
+        <li>
+
+            <a href="#about">
+
+                About
+
+            </a>
+
+        </li>
+
+
+
+
+        <li>
+
+            <a href="#experience">
+
+                Experience
+
+            </a>
+
+        </li>
+
+
+
+        <li>
+
+            <a href="#projects">
+
+                Projects
+
+            </a>
+
+        </li>
+
+
+
+
+        <li>
+
+            <a href="#contact">
+
+                Contact
+
+            </a>
+
+        </li>
+
+
+    </ul>
+
+
+</nav>
+
+
+
+
+
+<!-- ====================================== -->
+<!-- HERO -->
+<!-- ====================================== -->
+
+
+<section id="hero" class="hero">
+
+
+
+<div class="hero-content glass">
+
+
+    <h1>
+
+        Abdullah Ibrahim
+
+    </h1>
+
+
+
+
+    <h2 id="typing">
+
+
+        Python Developer
+
+    </h2>
+
+
+
+    <p>
+
+
+        Python Developer • Web Developer • Future Software Engineer
+
+
+    </p>
+
+
+
+
+    <a href="#about"
+
+    class="btn">
+
+
+        Explore Portfolio
+
+
+    </a>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- Scroll Indicator -->
+
+
+<div class="scroll-indicator">
+
+
+
+    <span></span>
+
+
+
+</div>
+
+
+
+
+
+</section>
+<!-- ====================================== -->
+<!-- ABOUT -->
+<!-- ====================================== -->
+
+<section id="about">
+
+    <h1 class="section-title">
+
+        About Me
+
+    </h1>
+
+
+    <div class="about-card glass">
+
+
+        <h3>
+
+            Who Am I?
+
+        </h3>
+
+
+        <p>
+
+            Hello! I'm <strong>Abdullah Ibrahim</strong>, a passionate
+            Python Developer from Khanewal, Pakistan, dedicated to
+            building efficient, practical, and visually appealing
+            software solutions.
+
+        </p>
+
+
+        <p>
+
+            I enjoy developing applications using Python and have
+            experience creating interactive programs, management
+            systems, encryption utilities, and quiz-based applications.
+
+        </p>
+
+
+        <p>
+
+            Alongside Python development, I am continuously expanding
+            my knowledge in modern Web Development using HTML, CSS,
+            and JavaScript to create responsive, high-quality, and
+            user-friendly websites.
+
+        </p>
+
+
+        <p>
+
+            I love learning new technologies, solving challenging
+            problems, and transforming ideas into functional projects
+            with precision and creativity.
+
+        </p>
+
+
+        <p>
+
+            Currently, I am strengthening my skills in Git, GitHub,
+            frontend development, and software engineering principles
+            while working towards becoming a professional Software
+            Engineer.
+
+        </p>
+
+
+    </div>
+
+</section>
+<!-- ====================================== -->
+<!-- EXPERIENCE -->
+<!-- ====================================== -->
+
+<section id="experience">
+
+    <h1 class="section-title">
+
+        Experience
+
+    </h1>
+
+
+    <div class="skills">
+
+
+        <!-- Python -->
+
+        <div class="skill glass">
+
+            <i class="fa-brands fa-python"></i>
+
+            <h3>Python</h3>
+
+            <p>
+                Experienced in Python development, problem solving,
+                object-oriented programming, automation, and creating
+                interactive command-line applications.
+            </p>
+
+            <div class="progress">
+
+                <div class="progress-bar python">
+
+                    <span>95%</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HTML -->
+
+        <div class="skill glass">
+
+            <i class="fa-brands fa-html5"></i>
+
+            <h3>HTML</h3>
+
+            <p>
+                Skilled in developing clean, semantic, and responsive
+                web page structures with modern HTML practices.
+            </p>
+
+            <div class="progress">
+
+                <div class="progress-bar html">
+
+                    <span>90%</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CSS -->
+
+        <div class="skill glass">
+
+            <i class="fa-brands fa-css3-alt"></i>
+
+            <h3>CSS</h3>
+
+            <p>
+                Capable of designing visually appealing interfaces
+                using animations, glassmorphism, gradients, and
+                responsive layouts.
+            </p>
+
+            <div class="progress">
+
+                <div class="progress-bar css">
+
+                    <span>88%</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- JavaScript -->
+
+        <div class="skill glass">
+
+            <i class="fa-brands fa-js"></i>
+
+            <h3>JavaScript</h3>
+
+            <p>
+                Learning modern JavaScript to create dynamic,
+                interactive, and engaging web experiences.
+            </p>
+
+            <div class="progress">
+
+                <div class="progress-bar javascript">
+
+                    <span>75%</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Git -->
+
+        <div class="skill glass">
+
+            <i class="fa-brands fa-git-alt"></i>
+
+            <h3>Git</h3>
+
+            <p>
+                Familiar with version control concepts including
+                commits, branching, and collaborative workflows.
+            </p>
+
+            <div class="progress">
+
+                <div class="progress-bar git">
+
+                    <span>70%</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GitHub -->
+
+        <div class="skill glass">
+
+            <i class="fa-brands fa-github"></i>
+
+            <h3>GitHub</h3>
+
+            <p>
+                Managing repositories, maintaining projects, and
+                continuously improving my developer portfolio.
+            </p>
+
+            <div class="progress">
+
+                <div class="progress-bar github">
+
+                    <span>80%</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+<!-- ====================================== -->
+<!-- PROJECTS -->
+<!-- ====================================== -->
+
+<section id="projects">
+
+    <h1 class="section-title">
+
+        Projects
+
+    </h1>
+
+
+    <div class="project-grid">
+
+
+        <!-- Project 1 -->
+
+        <a href="https://github.com/abdullahibrahimch7-svg/Knowledge-Quest"
+            target="_blank">
+
+            <div class="project glass">
+
+
+                <div class="project-icon">
+
+                    <i class="fa-solid fa-trophy"></i>
+
+                </div>
+
+
+                <h2>
+
+                    Knowledge Quest
+
+                </h2>
+
+
+                <p>
+
+                    A Python quiz game featuring multiple-choice
+                    questions, score tracking, and prize money rewards.
+
+                </p>
+
+
+                <div class="project-footer">
+
+                    <span>
+
+                        View Project
+
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </div>
+
+
+            </div>
+
+        </a>
+
+
+
+        <!-- Project 2 -->
+
+        <a href="https://github.com/abdullahibrahimch7-svg/Bank-Management-System"
+            target="_blank">
+
+            <div class="project glass">
+
+
+                <div class="project-icon">
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                </div>
+
+
+                <h2>
+
+                    Bank Management System
+
+                </h2>
+
+
+                <p>
+
+                    A Python banking application that supports balance
+                    checking, deposits, withdrawals, and menu-driven
+                    interactions.
+
+                </p>
+
+
+                <div class="project-footer">
+
+                    <span>
+
+                        View Project
+
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </div>
+
+
+            </div>
+
+        </a>
+
+
+
+
+        <!-- Project 3 -->
+
+
+        <a href="https://github.com/abdullahibrahimch7-svg/Student-Record-Manager"
+            target="_blank">
+
+            <div class="project glass">
+
+
+                <div class="project-icon">
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                </div>
+
+
+                <h2>
+
+                    Student Record Manager
+
+                </h2>
+
+
+                <p>
+
+                    A Python project that manages student records using
+                    dictionaries, loops, and conditional statements.
+
+                </p>
+
+
+                <div class="project-footer">
+
+                    <span>
+
+                        View Project
+
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </div>
+
+
+            </div>
+
+        </a>
+
+
+
+
+        <!-- Project 4 -->
+
+
+        <a href="https://github.com/abdullahibrahimch7-svg/Secret-Code-Language"
+            target="_blank">
+
+            <div class="project glass">
+
+
+                <div class="project-icon">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                </div>
+
+
+                <h2>
+
+                    Secret Code Language
+
+                </h2>
+
+
+                <p>
+
+                    A Python encryption and decryption project that
+                    converts messages into a custom secret language.
+
+                </p>
+
+
+                <div class="project-footer">
+
+                    <span>
+
+                        View Project
+
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </div>
+
+
+            </div>
+
+        </a>
+
+
+
+    </div>
+
+</section>
+<!-- ====================================== -->
+<!-- CONTACT -->
+<!-- ====================================== -->
+
+<section id="contact">
+
+    <h1 class="section-title">
+
+        Contact
+
+    </h1>
+
+
+    <div class="contact glass">
+
+
+        <!-- Gmail -->
+
+        <a href="mailto:abdullahibrahim.ch7@gmail.com">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <span>
+
+                abdullahibrahim.ch7@gmail.com
+
+            </span>
+
+        </a>
+
+
+
+        <!-- GitHub -->
+
+        <a href="https://github.com/abdullahibrahimch7-svg"
+           target="_blank">
+
+            <i class="fa-brands fa-github"></i>
+
+            <span>
+
+                github.com/abdullahibrahimch7-svg
+
+            </span>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ====================================== -->
+<!-- FOOTER -->
+<!-- ====================================== -->
+
+<footer>
+
+
+    <p>
+
+        © 2026 Abdullah Ibrahim
+
+    </p>
+
+
+    <p>
+
+        Built with HTML • CSS • JavaScript
+
+    </p>
+
+
+</footer>
+
+
+
+
+
+<!-- ====================================== -->
+<!-- JAVASCRIPT -->
+<!-- ====================================== -->
+
+<script src="aa.js"></script>
+
+</body>
+</html>
