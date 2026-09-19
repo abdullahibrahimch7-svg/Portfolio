@@ -27,29 +27,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.querySelectorAll('.project-card').forEach((card) => {
-    card.addEventListener('pointermove', (event) => {
-      const bounds = card.getBoundingClientRect();
-      const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-      const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-      card.style.setProperty('--pointer-x', `${(x + 0.5) * 100}%`);
-      card.style.setProperty('--pointer-y', `${(y + 0.5) * 100}%`);
-      card.style.transform = `perspective(900px) rotateX(${y * -4}deg) rotateY(${x * 5}deg) translateY(-8px)`;
-    });
-    card.addEventListener('pointerleave', () => {
-      card.style.removeProperty('transform');
-    });
-  });
+  const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  const heroCard = document.querySelector('.hero-card');
-  heroCard?.addEventListener('pointerenter', () => {
-    heroCard.classList.remove('is-shining');
-    void heroCard.offsetWidth;
-    heroCard.classList.add('is-shining');
-  });
+  if (supportsHover) {
+    document.querySelectorAll('.project-card').forEach((card) => {
+      card.addEventListener('pointermove', (event) => {
+        const bounds = card.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+        card.style.setProperty('--pointer-x', `${(x + 0.5) * 100}%`);
+        card.style.setProperty('--pointer-y', `${(y + 0.5) * 100}%`);
+        card.style.transform = `perspective(900px) rotateX(${y * -4}deg) rotateY(${x * 5}deg) translateY(-8px)`;
+      });
+      card.addEventListener('pointerleave', () => {
+        card.style.removeProperty('transform');
+      });
+    });
 
-  heroCard?.addEventListener('pointerleave', () => {
-    heroCard.classList.remove('is-shining');
-  });
+    const heroCard = document.querySelector('.hero-card');
+    heroCard?.addEventListener('pointerenter', () => {
+      heroCard.classList.remove('is-shining');
+      void heroCard.offsetWidth;
+      heroCard.classList.add('is-shining');
+    });
+
+    heroCard?.addEventListener('pointerleave', () => {
+      heroCard.classList.remove('is-shining');
+    });
+  }
 
 });
