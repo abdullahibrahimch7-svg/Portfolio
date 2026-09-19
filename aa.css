@@ -117,3 +117,8 @@ h1 em, h2 em { color: var(--coral); font-style: normal; }
   .section-heading h2 { font-size: 64px; line-height: .9; }
   .contact-section h2 { font-size: 78px; line-height: .84; }
 }
+
+@media (hover: none), (pointer: coarse) {
+  .project-card:hover, .capability:hover { transform: none; box-shadow: 0 18px 40px rgba(0,0,0,.28); border-color: rgba(198,210,213,.14); }
+  .project-card:hover::after, .capability:hover::after, .hero-card:hover::before { opacity: 0; animation: none; }
+}
